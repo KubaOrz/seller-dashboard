@@ -1,0 +1,6 @@
+{
+  "sellerDashboardName": "Seller dashboard",
+  "chosenAccount": "Chosen account: {{name}}",
+  "changeAccount": "Change account",
+  "logout": "Logout"
+}

@@ -1,0 +1,22 @@
+{
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": "*.java",
+      "options": {
+        "useTabs": true
+      }
+    },
+    {
+      "files": ["*.ts", "*.html", "*.scss", "*.js", "*.tsx", "*.jsx"],
+      "options": {
+        "trailingComma": "none",
+        "singleQuote": true,
+        "printWidth": 100,
+        "quoteProps": "as-needed",
+        "arrowParens": "avoid",
+        "useTabs": true
+      }
+    }
+  ]
+}
