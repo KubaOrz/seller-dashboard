@@ -408,7 +408,7 @@ export const SellerDashboardPage: FC = () => {
 					)}
 				</div>
 				<Divider sx={{ mt: 1, mb: 2 }} />
-				<KnowMore routeUrl={RoutesConstants.ORDERS_PAGE} />
+				<KnowMore routeUrl={RoutesConstants.CUSTOMER_REVIEWS_PAGE} />
 			</div>
 		);
 	};

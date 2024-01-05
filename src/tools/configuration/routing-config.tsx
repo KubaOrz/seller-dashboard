@@ -10,6 +10,7 @@ import { FC, ReactNode } from 'react';
 import { useSelector } from 'react-redux';
 import { Authentication } from '../../core/model/configuration/Authentication';
 import { PageElement } from '../../components/shared/PageElement';
+import CustomerReviewsPage from '../../pages/customer-reviews-page/CustomerReviewsPage';
 
 export const AuthenticationContainer: FC<{ children: ReactNode }> = ({ children }) => {
 	const authenticatedUser: Authentication = useSelector(
@@ -55,6 +56,10 @@ export const routes = createBrowserRouter([
 			{
 				path: RoutesConstants.SELLER_QUALITY_PAGE,
 				element: <SellerQualityPage />
+			},
+			{
+				path: RoutesConstants.CUSTOMER_REVIEWS_PAGE,
+				element: <CustomerReviewsPage />
 			}
 		]
 	}

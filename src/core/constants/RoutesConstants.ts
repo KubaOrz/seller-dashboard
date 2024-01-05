@@ -4,5 +4,6 @@ export enum RoutesConstants {
 	OFFER_RANKING_PAGE = '/offer-ranking',
 	ORDERS_PAGE = 'orders',
 	SALES_TIPS_PAGE = 'sales-tips',
-	SELLER_QUALITY_PAGE = 'seller-quality'
+	SELLER_QUALITY_PAGE = 'seller-quality',
+	CUSTOMER_REVIEWS_PAGE = 'customer-reviews'
 }
