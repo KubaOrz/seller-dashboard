@@ -108,7 +108,7 @@ export const SellerDashboardPage: FC = () => {
 						<SingleSellerQuality header={'DeliveryTime'} imgSrc={TimeImage} rate={'5/10'} />
 					</div>
 					<Divider sx={{ mt: 1, mb: 2 }} />
-					<KnowMore routeUrl={RoutesConstants.ORDERS_PAGE} />
+					<KnowMore routeUrl={RoutesConstants.SELLER_QUALITY_PAGE} />
 				</div>
 			</div>
 		);
