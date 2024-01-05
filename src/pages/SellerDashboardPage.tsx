@@ -135,7 +135,7 @@ export const SellerDashboardPage: FC = () => {
 			rotation: number;
 		}> = props => {
 			return (
-				<div className={'rounded-xl shadow-xl'}>
+				<div className={'rounded-xl shadow-xl transition-all hover:scale-105 cursor-pointer'}>
 					<div className={'w-52'}>
 						<img src={props.imgSrc} alt={'image'} className={'object-fill'} />
 					</div>
@@ -166,8 +166,8 @@ export const SellerDashboardPage: FC = () => {
 		};
 		return (
 			<div className="border border-solid border-gray-400 p-4 rounded-xl">
-				<div className={'grid grid-cols-2 w-3/4 justify-items-stretch'}>
-					<div className={'flex gap-2 justify-self-start'}>
+				<div className={'flex gap-2 items-center justify-center'}>
+					<div className={'flex gap-2'}>
 						<div className={'flex justify-center items-center'}>
 							<Checkbox defaultChecked color="success" />
 							<p className={'font-sans text-black text-small'}>{t('BestSold')}</p>
@@ -177,9 +177,7 @@ export const SellerDashboardPage: FC = () => {
 							<p className={'font-sans text-black'}>{t('TheLeastSold')}</p>
 						</div>
 					</div>
-					<p className={'text-center font-sans text-3xl text-[#10AC98] justify-self-center'}>
-						{t('Offer ranking')}
-					</p>
+					<span className={'font-sans text-3xl text-[#10AC98]'}>{t('Offer ranking')}</span>
 				</div>
 				<div className={'flex gap-4'}>
 					<MainPageRankingOffer
@@ -417,11 +415,11 @@ export const SellerDashboardPage: FC = () => {
 
 	return (
 		<div className={'m-2 flex justify-center items-center'}>
-			<div className={'flex flex-col gap-1'}>
-				<div className={'flex gap-2'}>
+			<div className={'flex flex-col gap-4'}>
+				<div className={'flex gap-4'}>
 					<SalesReview />
-					<div className={'flex gap-2 flex-col w-full'}>
-						<div className={'flex gap-1 w-full'}>
+					<div className={'flex gap-4 flex-col w-full'}>
+						<div className={'flex gap-4 w-full'}>
 							<div className={'w-1/2'}>
 								<DashboardOrders notPaid={5} notSent={5} refund={5} />
 							</div>
@@ -432,7 +430,7 @@ export const SellerDashboardPage: FC = () => {
 						<OfferRankingDashboard />
 					</div>
 				</div>
-				<div className={'flex gap-2 mb-10'}>
+				<div className={'flex gap-4 mb-10'}>
 					<div className={'w-8/12'}>
 						<SalesChart />
 					</div>
