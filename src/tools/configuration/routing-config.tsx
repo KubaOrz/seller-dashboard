@@ -5,7 +5,7 @@ import { SellerDashboardPage } from '../../pages/SellerDashboardPage';
 import { OfferRankingPage } from '../../pages/OfferRankingPage';
 import { OrdersPage } from '../../pages/OrdersPage';
 import { SalesTipsPage } from '../../pages/SalesTipsPage';
-import { SellerQualityPage } from '../../pages/SellerQualityPage';
+import SellerQualityPage from '../../pages/seller-quality-page/SellerQualityPage';
 import { FC, ReactNode } from 'react';
 import { useSelector } from 'react-redux';
 import { Authentication } from '../../core/model/configuration/Authentication';
