@@ -5,5 +5,5 @@ export type ThemeState = {
 };
 
 export const initialThemeState: ThemeState = {
-	theme: Theme.BLACK
+	theme: Theme.WHITE
 };
