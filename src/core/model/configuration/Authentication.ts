@@ -1,4 +1,4 @@
 export type Authentication = {
-	email: string | null;
+	username: string | null;
 	isAuthenticated: boolean;
 };

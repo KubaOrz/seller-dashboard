@@ -1,5 +1,7 @@
 export enum RoutesConstants {
-	LOGIN = 'login',
+	AUTH = 'auth',
+	REGISTER = '/auth/register',
+	LOGIN = '/auth/login',
 	MAIN_DASHBOARD = '/',
 	OFFER_RANKING_PAGE = '/offer-ranking',
 	ORDERS_PAGE = 'orders',

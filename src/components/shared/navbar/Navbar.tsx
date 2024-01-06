@@ -7,14 +7,34 @@ import { widgetNavbarNames } from './model/WidgetNavbarNames';
 import { WidgetNavigator } from './WidgetNavigator';
 import { LanguagePicker } from './components/LanguagePicker';
 import { ThemePicker } from './components/ThemePicker';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { RoutesConstants } from '../../../core/constants/RoutesConstants';
+import { fakeAuthenticationProvider } from '../../../tools/mock-data/users/FakeAuthenticationMock';
+import { logoutUser } from '../../../redux/authentication/authentication.slice';
+import { store } from '../../../redux/store';
 
 export const Navbar: FC = () => {
+	const username: string | null = useSelector(
+		(state: any) => state.authentication.authentication.username
+	);
 	const { t } = useTranslation();
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const widgetNavigatorElements: () => Array<ReactJSXElement> = () => {
 		return widgetNavbarNames.map((widgetNavbarName, index) => {
 			return <WidgetNavigator key={index} name={widgetNavbarName} />;
 		});
+	};
+
+	const handleLogoutButtonClicked: () => void = () => {
+		const logoutCallback: () => void = () => {
+			dispatch(logoutUser());
+			navigate(RoutesConstants.LOGIN);
+		};
+
+		fakeAuthenticationProvider.signOut(logoutCallback);
 	};
 
 	return (
@@ -27,13 +47,16 @@ export const Navbar: FC = () => {
 				<div className={'flex gap-2 items-center mr-4'}>
 					<PersonIcon fontSize={'large'} />
 					<p className={'font-sans text-xl text-white font-medium'}>
-						{t('chosenAccount', { name: 'Top seller' })}
+						{t('chosenAccount', { name: username })}
 					</p>
 					<div className={'flex gap-2 items-center'}>
 						<button className={'rounded-full bg-[#C0A6FF] p-2 font-medium font-sans'}>
 							{t('changeAccount')}
 						</button>
-						<button className={'font-sans rounded-full bg-[#BE4772] p-2 font-medium text-white'}>
+						<button
+							className={'font-sans rounded-full bg-[#BE4772] p-2 font-medium text-white'}
+							onClick={handleLogoutButtonClicked}
+						>
 							{t('logout')}
 						</button>
 					</div>

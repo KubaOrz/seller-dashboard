@@ -3,7 +3,7 @@ import { AuthenticationState, initialAuthenticationState } from './authenticatio
 import { Authentication } from '../../core/model/configuration/Authentication';
 
 const authenticationSlice = createSlice({
-	name: 'language',
+	name: 'auth',
 	initialState: initialAuthenticationState,
 	reducers: {
 		setUserAuthentication: (state: AuthenticationState, action: PayloadAction<Authentication>) => {
