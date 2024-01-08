@@ -2,7 +2,6 @@ import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
 import { RoutesConstants } from '../../core/constants/RoutesConstants';
 import { LoginPage } from '../../pages/login-page/LoginPage';
 import { SellerDashboardPage } from '../../pages/SellerDashboardPage';
-import { OfferRankingPage } from '../../pages/OfferRankingPage';
 import { OrdersPage } from '../../pages/OrdersPage';
 import { SalesTipsPage } from '../../pages/SalesTipsPage';
 import SellerQualityPage from '../../pages/seller-quality-page/SellerQualityPage';
@@ -13,6 +12,7 @@ import { PageElement } from '../../components/shared/PageElement';
 import CustomerReviewsPage from '../../pages/customer-reviews-page/CustomerReviewsPage';
 import { RegisterPage } from '../../pages/register-page/RegisterPage';
 import { AuthenticationNavbar } from '../../components/shared/navbar/AuthenticationNavbar';
+import OfferRankingPage from '../../pages/offer-ranking-page/OfferRankingPage';
 
 export const AuthenticationContainer: FC<{ children: ReactNode }> = ({ children }) => {
 	const authenticatedUser: Authentication = useSelector(

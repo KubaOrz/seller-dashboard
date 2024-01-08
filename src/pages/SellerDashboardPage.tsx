@@ -18,6 +18,7 @@ import RotationImage from '../tools/assets/main-page/ranking/RotationImage.png';
 import SoldImage from '../tools/assets/main-page/ranking/SoldImage.png';
 // @ts-ignore
 import * as d3 from 'd3';
+import RankingOffer from '../components/shared/ranking-offer/RankingOffer';
 
 export type ReviewType = 'Positive' | 'Negative' | 'All';
 
@@ -128,42 +129,6 @@ export const SellerDashboardPage: FC = () => {
 	const OfferRankingDashboard: FC = () => {
 		const { t } = useTranslation();
 
-		const MainPageRankingOffer: FC<{
-			imgSrc: any;
-			productName: string;
-			soldNumber: number;
-			rotation: number;
-		}> = props => {
-			return (
-				<div className={'rounded-xl shadow-xl transition-all hover:scale-105 cursor-pointer'}>
-					<div className={'w-52'}>
-						<img src={props.imgSrc} alt={'image'} className={'object-fill'} />
-					</div>
-					<div className={'p-2'}>
-						<div className={'flex flex-col'}>
-							<p className={'text-center text-[#10AC98] font-sans'}>{t(props.productName)}</p>
-							<Divider />
-							<div className={'flex gap-2 flex-col mb-3 mt-1'}>
-								<div className={'flex gap-1 justify-between items-center px-4'}>
-									<img src={SoldImage} alt={'image'} className={'w-5'} />
-									<p className={'font-sans text-xs text-center'}>{t('Sold')}</p>
-									<p className={'font-sans text-xs text-center'}>
-										{props.soldNumber} {t('szt.')}
-									</p>
-								</div>
-								<div className={'flex gap-1 justify-between items-center px-4'}>
-									<img src={RotationImage} alt={'image'} className={'w-5'} />
-									<p className={'font-sans text-xs text-center'}>{t('Rotation')}</p>
-									<p className={'font-sans text-xs text-center'}>
-										{props.soldNumber} {t('szt.')}
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			);
-		};
 		return (
 			<div className="border border-solid border-gray-400 p-4 rounded-xl">
 				<div className={'flex gap-2 items-center justify-center'}>
@@ -180,25 +145,25 @@ export const SellerDashboardPage: FC = () => {
 					<span className={'font-sans text-3xl text-[#10AC98]'}>{t('Offer ranking')}</span>
 				</div>
 				<div className={'flex gap-4'}>
-					<MainPageRankingOffer
+					<RankingOffer
 						imgSrc={MockRankingImage}
 						productName={'Rower gorski'}
 						soldNumber={13}
 						rotation={13000}
 					/>
-					<MainPageRankingOffer
+					<RankingOffer
 						imgSrc={MockRankingImage}
 						productName={'Rower gorski'}
 						soldNumber={13}
 						rotation={13000}
 					/>
-					<MainPageRankingOffer
+					<RankingOffer
 						imgSrc={MockRankingImage}
 						productName={'Rower gorski'}
 						soldNumber={13}
 						rotation={13000}
 					/>
-					<MainPageRankingOffer
+					<RankingOffer
 						imgSrc={MockRankingImage}
 						productName={'Rower gorski'}
 						soldNumber={13}
