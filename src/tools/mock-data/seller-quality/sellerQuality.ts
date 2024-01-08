@@ -6,12 +6,11 @@ export type SellerQualityAspect = {
 export type SellerQualityCategory = "very-good" | "good" | "bad" | "very-bad";
 
 export type SellerQualityData = {
-    clientSupport: SellerQualityAspect,
-    prices: SellerQualityAspect,
-    deliveryTime: SellerQualityAspect,
-    productQuality: SellerQualityAspect,
-    respondTime: SellerQualityAspect,
-}
+    [key: string]: {
+      name: string;
+      assesment: number;
+    };
+  };
 
 export const sellerQualityData: SellerQualityData = {
     clientSupport: {

@@ -13,6 +13,9 @@ import CustomerReviewsPage from '../../pages/customer-reviews-page/CustomerRevie
 import { RegisterPage } from '../../pages/register-page/RegisterPage';
 import { AuthenticationNavbar } from '../../components/shared/navbar/AuthenticationNavbar';
 import OfferRankingPage from '../../pages/offer-ranking-page/OfferRankingPage';
+import NotDeliveredOrders from '../../pages/orders-pages/NotDeliveredOrdersPage';
+import NotPaidOrdersPage from '../../pages/orders-pages/NotPaidOrdersPage';
+import ReturnedOrdersPage from '../../pages/orders-pages/ReturnedOrdersPage';
 
 export const AuthenticationContainer: FC<{ children: ReactNode }> = ({ children }) => {
 	const authenticatedUser: Authentication = useSelector(
@@ -89,6 +92,18 @@ export const routes = createBrowserRouter([
 			{
 				path: RoutesConstants.CUSTOMER_REVIEWS_PAGE,
 				element: <CustomerReviewsPage />
+			},
+			{
+				path: RoutesConstants.NOT_DELIVERED_ORDERS_PAGE,
+				element: <NotDeliveredOrders />
+			},
+			{
+				path: RoutesConstants.NOT_PAID_ORDERS_PAGE,
+				element: <NotPaidOrdersPage />
+			},
+			{
+				path: RoutesConstants.RETURNED_ORDERS_PAGE,
+				element: <ReturnedOrdersPage />
 			}
 		]
 	}

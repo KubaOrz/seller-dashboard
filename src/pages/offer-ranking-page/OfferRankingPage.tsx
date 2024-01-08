@@ -102,7 +102,7 @@ const OfferRankingPage: FC = () => {
             <div className="flex justify-end w-100 md:w-4/5 lg:w-5/6 mb-4">
                 <Pagination currentPage={page} totalPages={totalPages} handlePageChange={handlePageChange} />
             </div>        
-    </div>
+        </div>
     )
 }
 

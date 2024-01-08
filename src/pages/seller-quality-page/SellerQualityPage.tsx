@@ -4,38 +4,10 @@ import { SellerQualityAspect, SellerQualityCategory, SellerQualityData, sellerQu
 import QualityAssessmentImage from '../../tools/assets/seller-quality-page/QualityAssessmentImage.png';
 import QualityCategoryImage from '../../tools/assets/seller-quality-page/QualityCategoryImage.png';
 import QualityAssessmentItem from "./components/QualityAssessmentItem";
+import { useSellerQuality } from "../../hooks/useSellerQuality";
 
 const SellerQualityPage: FC = () => {
-    const [qualityData, setQualityData] = useState<SellerQualityData | null>(null);
-    const [qualityAssessment, setQualityAssessment] = useState(0);
-    const [qualityCategory, setQualityCategory] = useState<SellerQualityCategory>();
-
-    useEffect(() => {
-        setQualityData(sellerQualityData);
-        const qualityAssessment = countTotalAssessment(sellerQualityData);
-        setQualityAssessment(qualityAssessment);
-        setQualityCategory(findQualityCategory(qualityAssessment));
-    }, []);
-
-    const countTotalAssessment = (qualityData: SellerQualityData) => {
-        if (!qualityData) {
-            return 0;
-        }
-        let totalAssessment = 0;
-        totalAssessment += qualityData?.clientSupport.assesment;
-        totalAssessment += qualityData?.prices.assesment;
-        totalAssessment += qualityData?.deliveryTime.assesment;
-        totalAssessment += qualityData?.productQuality.assesment;
-        totalAssessment += qualityData?.respondTime.assesment;
-        return totalAssessment;
-    }
-
-    const findQualityCategory = (totalAssessment: number): SellerQualityCategory => {
-        if (totalAssessment < 20) return "very-bad";
-        else if (totalAssessment < 30) return "bad";
-        else if (totalAssessment < 40) return "good";
-        else return "very-good";
-    }
+    const { qualityData, qualityCategory, qualityAssessment } = useSellerQuality();
 
     return (
         <div className="flex flex-col items-center">

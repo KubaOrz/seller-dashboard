@@ -4,21 +4,14 @@ import { Checkbox, Divider, MenuItem, Rating, Select, SelectChangeEvent } from '
 import { SampleReviewImage } from '../tools/assets/main-page/SampleReviewImage';
 import { RoutesConstants } from '../core/constants/RoutesConstants';
 import { Link } from 'react-router-dom';
-import NotPaidImage from '../tools/assets/main-page/orders/NotPaidImage.png';
-import RefundImage from '../tools/assets/main-page/orders/RefundImage.png';
-import NotSentImage from '../tools/assets/main-page/orders/NotSentImage.png';
-import SellerQualityImage from '../tools/assets/main-page/seller-quality/QualityImage.png';
-import CategoryImage from '../tools/assets/main-page/seller-quality/CategoryImage.png';
-import PricesImage from '../tools/assets/main-page/seller-quality/PricesImage.png';
-import TimeImage from '../tools/assets/main-page/seller-quality/TimeImage.png';
-import ClientSupportImage from '../tools/assets/main-page/seller-quality/ClientSupportImage.png';
 import SalesTipsImage from '../tools/assets/main-page/sales-tips/SalesTips.png';
 import MockRankingImage from '../tools/assets/main-page/ranking/mockRankingImage.png';
-import RotationImage from '../tools/assets/main-page/ranking/RotationImage.png';
-import SoldImage from '../tools/assets/main-page/ranking/SoldImage.png';
 // @ts-ignore
 import * as d3 from 'd3';
 import RankingOffer from '../components/shared/ranking-offer/RankingOffer';
+import { OrdersWidget } from '../components/widgets/orders-widget/OrdersWidget';
+import KnowMore from '../components/shared/know-more/KnowMore';
+import SellerQualityWidget from '../components/widgets/seller-quality/SellerQualityWidget';
 
 export type ReviewType = 'Positive' | 'Negative' | 'All';
 
@@ -56,60 +49,6 @@ export const SellerDashboardPage: FC = () => {
 				<div className={'flex flex-col gap-1 items-center justify-start'}>
 					<Rating name="read-only" value={review.numberOfStars} readOnly size={'large'} />
 					<p className={'text-sans text-xs text-[#000000]'}>{review.comment}</p>
-				</div>
-			</div>
-		);
-	};
-
-	const KnowMore: FC<{ routeUrl: string }> = ({ routeUrl }) => {
-		return (
-			<div className={'font-sans text-base text-[#10AC98] underline text-end'}>
-				<Link to={routeUrl}>{t('KnowMore')}</Link>
-			</div>
-		);
-	};
-
-	const SellerQuality: FC = () => {
-		const SingleSellerQuality: FC<{ imgSrc: any; rate: string; header: string }> = props => {
-			return (
-				<div className={'flex flex-col justify-center items-center gap-1'}>
-					<div className={'flex justify-center items-center gap-1'}>
-						<img src={props.imgSrc} alt={'img'} className={'w-10'} />
-						<p>{props.rate}</p>
-					</div>
-					<p className={'text-[#666666] text-xs'}>{t(props.header)}</p>
-				</div>
-			);
-		};
-		return (
-			<div className="border border-solid border-gray-400 p-4 rounded-xl w-full">
-				<p className={'text-center font-sans text-3xl text-[#10AC98]'}>{t('SellerQuality')}</p>
-				<div className={'flex justify-between'}>
-					<div className={'flex flex-col justify-center items-center'}>
-						<div className={'flex justify-center items-center gap-1'}>
-							<img src={SellerQualityImage} className={'w-10'} alt={'image'} />
-							<p>31/50</p>
-						</div>
-						<p>{t('Seller mark')}</p>
-					</div>
-					<div className={'flex flex-col justify-center items-center'}>
-						<div className={'flex justify-center items-center gap-1'}>
-							<img src={CategoryImage} alt={'image'} className={'w-10'} />
-							<p>Good</p>
-						</div>
-						<p>{t('Your quality category')}</p>
-					</div>
-				</div>
-				<Divider sx={{ mt: 1, mb: 2 }} />
-				<div>
-					<p className={'text-center text-[#10AC98] font-sans'}>{t('SellerQualityHeading')}</p>
-					<div className={'flex gap-2 justify-between'}>
-						<SingleSellerQuality header={'ClientHelp'} imgSrc={ClientSupportImage} rate={'2/10'} />
-						<SingleSellerQuality header={'ProductPrices'} imgSrc={PricesImage} rate={'4/10'} />
-						<SingleSellerQuality header={'DeliveryTime'} imgSrc={TimeImage} rate={'5/10'} />
-					</div>
-					<Divider sx={{ mt: 1, mb: 2 }} />
-					<KnowMore routeUrl={RoutesConstants.SELLER_QUALITY_PAGE} />
 				</div>
 			</div>
 		);
@@ -172,38 +111,6 @@ export const SellerDashboardPage: FC = () => {
 				</div>
 				<div className={'font-sans text-base text-[#10AC98] underline text-end mt-2'}>
 					<Link to={RoutesConstants.OFFER_RANKING_PAGE}>{t('SearchOffers')}</Link>
-				</div>
-			</div>
-		);
-	};
-
-	const DashboardOrders: FC<{ notPaid: number; notSent: number; refund: number }> = ({
-		notSent,
-		notPaid,
-		refund
-	}) => {
-		const DashboardOrder: FC<{ image: any; numberOfElements: number; header: string }> = props => {
-			return (
-				<div className={'flex flex-col items-center justify-center'}>
-					<p className={'font-sans text-base text-black text-center'}>{t(props.header)}</p>
-					<img src={props.image} alt={'NotPaidImage'} className={'w-14 mb-1'} />
-					<div
-						className={
-							'rounded-full bg-[#7F66E7] text-white h-10 w-10 flex items-center justify-center'
-						}
-					>
-						{props.numberOfElements}
-					</div>
-				</div>
-			);
-		};
-		return (
-			<div className="border border-solid border-gray-400 p-4 rounded-xl w-full h-full">
-				<p className={'text-center font-sans text-3xl text-[#10AC98]'}>{t('Orders')}</p>
-				<div className={'flex gap-1 mt-10 justify-between items-center px-4'}>
-					<DashboardOrder image={NotPaidImage} numberOfElements={notPaid} header={'NotPaid'} />
-					<DashboardOrder image={NotSentImage} numberOfElements={notSent} header={'NotSent'} />
-					<DashboardOrder image={RefundImage} numberOfElements={refund} header={'Refunds'} />
 				</div>
 			</div>
 		);
@@ -386,10 +293,10 @@ export const SellerDashboardPage: FC = () => {
 					<div className={'flex gap-4 flex-col w-full'}>
 						<div className={'flex gap-4 w-full'}>
 							<div className={'w-1/2'}>
-								<DashboardOrders notPaid={5} notSent={5} refund={5} />
+								<OrdersWidget />
 							</div>
 							<div className={'w-1/2'}>
-								<SellerQuality />
+								<SellerQualityWidget />
 							</div>
 						</div>
 						<OfferRankingDashboard />
