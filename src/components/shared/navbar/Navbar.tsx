@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router';
 import { RoutesConstants } from '../../../core/constants/RoutesConstants';
 import { fakeAuthenticationProvider } from '../../../tools/mock-data/users/FakeAuthenticationMock';
 import { logoutUser } from '../../../redux/authentication/authentication.slice';
-import { store } from '../../../redux/store';
+import { OrdersWidgetNavigator } from './OrdersWidgetNavigator';
 
 export const Navbar: FC = () => {
 	const username: string | null = useSelector(
@@ -23,9 +23,23 @@ export const Navbar: FC = () => {
 	const navigate = useNavigate();
 
 	const widgetNavigatorElements: () => Array<ReactJSXElement> = () => {
-		return widgetNavbarNames.map((widgetNavbarName, index) => {
-			return <WidgetNavigator key={index} name={widgetNavbarName} />;
-		});
+		const widgetNavbarElements: JSX.Element[] = [];
+		let iterator: number = 0;
+
+		// @ts-ignore
+		for (const [name, route] of widgetNavbarNames.entries()) {
+			if (name !== 'Orders') {
+				widgetNavbarElements.push(<WidgetNavigator key={iterator} name={name} route={route} />);
+			} else {
+				console.log('cos');
+				widgetNavbarElements.push(
+					<OrdersWidgetNavigator key={iterator} name={name} route={route} />
+				);
+			}
+			iterator += 1;
+		}
+
+		return widgetNavbarElements;
 	};
 
 	const handleLogoutButtonClicked: () => void = () => {
