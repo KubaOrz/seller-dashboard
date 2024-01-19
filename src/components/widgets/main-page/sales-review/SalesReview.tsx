@@ -20,7 +20,7 @@ export const SalesReview: FC = () => {
 
 	return (
 		<div className="border border-solid border-gray-400 p-4 rounded-xl">
-			<p className={'text-center font-sans text-3xl text-[#10AC98]'}>{t('Opinie kupujacych')}</p>
+			<p className={'text-center font-sans text-3xl text-[#10AC98]'}>{t('CustomerReview')}</p>
 			<div className={'flex justify-center items-center'}>
 				<Select value={reviewType} size={'small'} onChange={handleReviewTypeChange}>
 					<MenuItem value={'Positive'}>

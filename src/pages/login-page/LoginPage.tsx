@@ -64,7 +64,7 @@ export const LoginPage: FC = () => {
 						inputRef={usernameRef}
 					/>
 					<FormControl variant="outlined" color={'success'} size={'small'} fullWidth={true}>
-						<InputLabel htmlFor="password-input">Password</InputLabel>
+						<InputLabel htmlFor="password-input">{t('Password')}</InputLabel>
 						<OutlinedInput
 							id="password-input"
 							inputRef={passwordRef}

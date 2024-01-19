@@ -24,7 +24,7 @@ const SellerQualityWidget: FC = () => {
 		}
 		const worstAspects = findWorstAspects(qualityData);
 		setWorstAspects(worstAspects);
-	}, []);
+	}, [qualityData]);
 
 	const findWorstAspects = (data: SellerQualityData) => {
 		const sorted = Object.entries(data).sort(([, a], [, b]) => a.assesment - b.assesment);

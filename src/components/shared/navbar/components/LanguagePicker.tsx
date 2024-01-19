@@ -1,4 +1,4 @@
-import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import React, { FC, useState } from 'react';
 import UnitedKingdomIcon from '../../../../tools/assets/language-picker/united-kingdom-flag-icon.svg';
 import PolandIcon from '../../../../tools/assets/language-picker/poland-flag-icon.svg';
@@ -17,7 +17,11 @@ export const LanguagePicker: FC = () => {
 
 	return (
 		<FormControl sx={{ m: 1, width: 120 }} size="small">
-			<Select value={language} onChange={handleChange} sx={{ width: 120 }}>
+			<Select
+				value={i18n.language === 'pl' ? 'Polish' : 'English'}
+				onChange={handleChange}
+				sx={{ width: 120 }}
+			>
 				<MenuItem value={'English'}>
 					<div className={'flex gap-1'}>
 						{t('English')}
