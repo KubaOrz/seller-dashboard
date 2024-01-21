@@ -53,7 +53,7 @@ export const Navbar: FC = () => {
 
 	return (
 		<>
-			<div className={'flex justify-between w-screen bg-primary p-2 flex-wrap'}>
+			<div className={'flex justify-between w-screen bg-primary-light dark:bg-primary-dark p-2 flex-wrap'}>
 				<div className={'flex gap-2 items-center'}>
 					<NavbarDashboardIcon />
 					<p className={'text-2xl text-white font-sans mt-1'}>{t('sellerDashboardName')}</p>

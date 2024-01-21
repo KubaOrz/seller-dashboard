@@ -14,7 +14,7 @@ export const AuthenticationNavbar: FC = () => {
 
 	return (
 		<>
-			<div className={'flex justify-between w-screen bg-primary p-2'}>
+			<div className={'flex justify-between w-screen bg-primary-light p-2'}>
 				<div className={'flex gap-2 items-center'}>
 					<NavbarDashboardIcon />
 					<p className={'text-2xl text-white font-sans mt-1'}>{t('sellerDashboardName')}</p>

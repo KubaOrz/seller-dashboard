@@ -15,7 +15,7 @@ const OrderTypeCounter: FC<OrderTypeCounterProps> = props => {
     return (
         <Link to={props.target}>
             <div className={'flex flex-col items-center justify-center'}>
-                <p className={'font-sans text-base text-black text-center'}>{t(props.header)}</p>
+                <p className={'font-sans text-base text-text-dark dark:text-text-light text-center'}>{t(props.header)}</p>
                 <img src={props.image} alt={'NotPaidImage'} className={'w-14 mb-1'} />
                 <div
                     className={

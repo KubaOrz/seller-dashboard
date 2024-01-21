@@ -12,7 +12,7 @@ const SellerQualityPage: FC = () => {
 
 	return (
 		<div className="flex flex-col items-center">
-			<h1 className="text-center font-sans text-4xl text-[#10AC98] mb-5">Jakość sprzedaży</h1>
+			<h1 className="text-center font-sans text-4xl text-headerText-light dark:text-headerText-dark mb-5">Jakość sprzedaży</h1>
 			{qualityCategory && (
 				<div className="grid grid-cols-2 w-100 gap-3 mb-3 md:w-3/4 lg:w-2/3">
 					<QualityAssessmentItem

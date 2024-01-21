@@ -69,7 +69,7 @@ const OfferRankingPage: FC = () => {
 
 	return (
 		<div className="flex flex-col gap-4 items-center">
-			<h1 className="text-center font-sans text-4xl text-[#10AC98] mb-5">{t('SalesRanking')}</h1>
+			<h1 className="text-center font-sans text-4xl text-headerText-light dark:text-headerText-dark mb-5">{t('SalesRanking')}</h1>
 
 			<div className="flex justify-start items-center gap-2 mb-3 w-100 md:w-4/5 lg:w-5/6">
 				<FormControlLabel

@@ -17,7 +17,7 @@ const SingleSellerQualityAspect: FC<SingleSellerQualityAspectProps> = ({ imgUrl,
 			</div>
 
 			<div className="h-1/2 flex flex-col items-center justify-center">
-				<h1 className="text-center font-sans text-xl text-[#10AC98]">{t(aspect.name)}</h1>
+				<h1 className="text-center font-sans text-xl text-headerText-light dark:text-headerText-dark">{t(aspect.name)}</h1>
 				<p>{aspect.assesment}/10</p>
 			</div>
 		</div>

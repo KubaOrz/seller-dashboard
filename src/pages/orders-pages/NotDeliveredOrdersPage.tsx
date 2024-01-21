@@ -14,11 +14,11 @@ const NotDeliveredOrders: FC = () => {
 
 	return (
 		<div className="flex flex-col gap-4 items-center">
-			<h1 className="text-center font-sans text-4xl text-[#10AC98] mb-5">
+			<h1 className="text-center font-sans text-4xl text-headerText-light dark:text-headerText-dark mb-5">
 				{t('NotSent')} {t('Orders')} ({notDeliveredOrders.length})
 			</h1>
 
-			<div className="w-90 gap-4 md:w-3/4 lg:w-2/3">
+			<div className="flex flex-col gap-2 w-90 md:w-3/4 lg:w-2/3">
 				{notDeliveredOrders.map((order, index) => (
 					<OrderItem key={index} order={order} />
 				))}

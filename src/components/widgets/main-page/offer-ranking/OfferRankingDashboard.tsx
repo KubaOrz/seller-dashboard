@@ -33,28 +33,28 @@ export const OfferRankingDashboard: FC = () => {
 	};
 
 	return (
-		<div className="border border-solid border-gray-400 p-4 rounded-xl">
-			<div className={'flex gap-2 items-center justify-center'}>
-				<div className={'flex gap-2'}>
-					<div className={'flex justify-center items-center'}>
+		<div className="border border-solid border-gray-400 p-4 rounded-xl dark:bg-secondary-darker dark:border-none">
+			<div className={'grid'}>
+				<span className={'font-sans text-center text-3xl text-headerText-light dark:text-headerText-dark'}>{t('SalesRanking')}</span>
+				<div className={'flex gap-2 justify-start'}>
+					<div className={'flex items-center'}>
 						<Checkbox
 							defaultChecked
 							color="success"
 							checked={sorting === 'desc'}
 							onChange={() => applySorting('desc')}
 						/>
-						<p className={'font-sans text-black text-small'}>{t('BestSold')}</p>
+						<p className={'font-sans text-xs'}>{t('BestSold')}</p>
 					</div>
-					<div className={'flex justify-center items-center'}>
+					<div className={'flex items-center'}>
 						<Checkbox
 							color="success"
 							checked={sorting === 'asc'}
 							onChange={() => applySorting('asc')}
 						/>
-						<p className={'font-sans text-black'}>{t('TheLeastSold')}</p>
+						<p className={'font-sans text-xs'}>{t('TheLeastSold')}</p>
 					</div>
 				</div>
-				<span className={'font-sans text-3xl text-[#10AC98]'}>{t('SalesRanking')}</span>
 			</div>
 			<div className={'flex gap-4'}>
 				{offers.map((offer, index) => (
@@ -67,7 +67,7 @@ export const OfferRankingDashboard: FC = () => {
 					/>
 				))}
 			</div>
-			<div className={'font-sans text-base text-[#10AC98] underline text-end mt-2'}>
+			<div className={'font-sans text-base text-headerText-light dark:text-headerText-dark underline text-end mt-2'}>
 				<Link to={RoutesConstants.OFFER_RANKING_PAGE}>{t('SearchOffers')}</Link>
 			</div>
 		</div>

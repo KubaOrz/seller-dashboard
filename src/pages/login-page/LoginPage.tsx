@@ -53,7 +53,7 @@ export const LoginPage: FC = () => {
 	return (
 		<div className={'flex flex-col justify-center items-center h-full'}>
 			<div className={'w-1/4 flex flex-col gap-4'}>
-				<p className={'font-sans text-4xl text-[#10AC98] text-center'}>{t('Login')}</p>
+				<p className={'font-sans text-4xl text-headerText-light dark:text-headerText-dark text-center'}>{t('Login')}</p>
 				<div className={'flex flex-col gap-4'}>
 					<TextField
 						fullWidth={true}
@@ -92,7 +92,7 @@ export const LoginPage: FC = () => {
 					<p className={'font-sans text-black'}>
 						{t('DoNotHaveAccount')}{' '}
 						<span
-							className={'font-sans text-[#10AC98] underline cursor-pointer'}
+							className={'font-sans text-headerText-light dark:text-headerText-dark underline cursor-pointer'}
 							onClick={() => navigate(RoutesConstants.REGISTER)}
 						>
 							{t('Register')}

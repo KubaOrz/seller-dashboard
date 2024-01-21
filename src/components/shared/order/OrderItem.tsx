@@ -8,13 +8,13 @@ const OrderItem: FC<{ order: OrderData }> = ({ order }) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="flex flex-row border overflow-hidden shadow-lg rounded-lg p-3">
+		<div className="flex flex-row overflow-hidden shadow-lg rounded-lg p-3 dark:bg-secondary-darker">
 			<div className="aspect-square h-52">
 				<img src={MockRankingImage} alt="Aspect" className="w-full h-full object-fit-cover" />
 			</div>
 
 			<div className="flex flex-col gap-2 p-4 w-full">
-				<h1 className="font-sans text-3xl text-[#10AC98]">{order.productName}</h1>
+				<h1 className="font-sans text-3xl text-headerText-light dark:text-headerText-dark">{order.productName}</h1>
 				<Divider sx={{ width: '100%' }} />
 				<div className="ml-4">
 					<p>

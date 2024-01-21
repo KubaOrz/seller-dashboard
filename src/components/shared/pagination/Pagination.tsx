@@ -13,16 +13,16 @@ const Pagination: FC<PaginationProps> = ({ currentPage, totalPages, handlePageCh
                 <>
                     <button
                         className={`mx-2 p-2 w-8 h-8 rounded-full text-xs ${
-                            1 === currentPage ? "bg-[#10AC98] text-white" : "bg-gray-200"
+                            1 === currentPage ? "bg-headerText-light dark:bg-headerText-dark text-white" : "bg-gray-200 text-black"
                         }`}
                         onClick={() => handlePageChange(1)}
                     >
                         {1}
                     </button>
                     <div className="flex items-end mx-2">
-                        <div className="h-1 w-1 bg-[#10AC98] rounded-full"></div>
-                        <div className="h-1 w-1 bg-[#10AC98] rounded-full mx-1"></div>
-                        <div className="h-1 w-1 bg-[#10AC98] rounded-full"></div>
+                        <div className="h-1 w-1 bg-headerText-light dark:bg-primary-dark rounded-full"></div>
+                        <div className="h-1 w-1 bg-headerText-light dark:bg-primary-dark rounded-full mx-1"></div>
+                        <div className="h-1 w-1 bg-headerText-light dark:bg-primary-dark rounded-full"></div>
                     </div>
                 </>
             )}
@@ -32,7 +32,7 @@ const Pagination: FC<PaginationProps> = ({ currentPage, totalPages, handlePageCh
                         <button
                             key={page}
                             className={`mx-2 p-2 w-8 h-8 rounded-full text-xs ${
-                                page === currentPage ? "bg-[#10AC98] text-white" : "bg-gray-200"
+                                page === currentPage ? "bg-headerText-light dark:bg-primary-dark text-white" : "bg-gray-200 text-black"
                             }`}
                             onClick={() => handlePageChange(page)}
                         >
@@ -44,13 +44,13 @@ const Pagination: FC<PaginationProps> = ({ currentPage, totalPages, handlePageCh
             {currentPage < totalPages - 1 && (
                 <>
                     <div className="flex items-end mx-2">
-                        <div className="h-1 w-1 bg-[#10AC98] rounded-full"></div>
-                        <div className="h-1 w-1 bg-[#10AC98] rounded-full mx-1"></div>
-                        <div className="h-1 w-1 bg-[#10AC98] rounded-full"></div>
+                        <div className="h-1 w-1 bg-headerText-light dark:bg-primary-dark rounded-full"></div>
+                        <div className="h-1 w-1 bg-headerText-light dark:bg-primary-dark rounded-full mx-1"></div>
+                        <div className="h-1 w-1 bg-headerText-light dark:bg-primary-dark rounded-full"></div>
                     </div>
                     <button
                         className={`mx-2 p-2 w-8 h-8 rounded-full text-xs ${
-                            totalPages === currentPage ? "bg-[#10AC98] text-white" : "bg-gray-200"
+                            totalPages === currentPage ? "bg-headerText-light dark:bg-headerText-dark text-white" : "bg-gray-200 text-black"
                         }`}
                         onClick={() => handlePageChange(totalPages)}
                     >

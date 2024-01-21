@@ -23,8 +23,8 @@ export const SalesChart: FC = () => {
 	}, [chartType, timeRange, measure, showPrevious]);
 
 	return (
-		<div className="border border-solid border-gray-400 p-4 rounded-xl w-full">
-			<p className={'text-center font-sans text-3xl text-[#10AC98]'}>{t('SalesChart')}</p>
+		<div className="border border-solid border-gray-400 p-4 rounded-xl w-full dark:bg-secondary-darker dark:border-none">
+			<p className={'text-center font-sans text-3xl text-headerText-light dark:text-headerText-dark'}>{t('SalesChart')}</p>
 			<div className={'flex gap-1'}>
 				<div className={'w-1/4 flex flex-col gap-3'}>
 					<div className={'flex flex-col gap-1'}>
@@ -35,6 +35,7 @@ export const SalesChart: FC = () => {
 							onChange={(event: SelectChangeEvent) => {
 								setMeasure(event.target.value as ChartMeasure);
 							}}
+							className="dark:bg-secondary-dark"
 						>
 							<MenuItem value={'Rotation'}>
 								<div className={'pr-10'}>{t('Rotation')}</div>
@@ -52,6 +53,7 @@ export const SalesChart: FC = () => {
 							onChange={(event: SelectChangeEvent) => {
 								setTimeRange(event.target.value as TimeRange);
 							}}
+							className="dark:bg-secondary-dark"
 						>
 							<MenuItem value={'Today'}>
 								<div className={'pr-10'}>{t('Today')}</div>
@@ -72,6 +74,7 @@ export const SalesChart: FC = () => {
 							onChange={(event: SelectChangeEvent) => {
 								setChartType(event.target.value as ChartType);
 							}}
+							className="dark:bg-secondary-dark"
 						>
 							<MenuItem value={'Bar'}>
 								<div className={'pr-10'}>{t('Bar')}</div>
@@ -88,7 +91,7 @@ export const SalesChart: FC = () => {
 							value={showPrevious}
 							onChange={() => setShowPrevious(!showPrevious)}
 						/>
-						<p className={'font-sans text-black text-xs'}>{t('ShowLastPeriod')}</p>
+						<p className={'font-sans text-xs'}>{t('ShowLastPeriod')}</p>
 					</div>
 				</div>
 				{/** @ts-ignore **/}

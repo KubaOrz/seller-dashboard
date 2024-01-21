@@ -12,6 +12,14 @@ export const ThemePicker = () => {
 
 	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const theme = !checked ? Theme.WHITE : Theme.BLACK;
+		const root = window.document.documentElement;
+		if (theme === Theme.BLACK) {
+			root.classList.remove(Theme.WHITE);
+			root.classList.add(Theme.BLACK);
+		} else {
+			root.classList.remove(Theme.BLACK);
+			root.classList.add(Theme.WHITE);
+		}
 		dispatch(toggleTheme(theme));
 		setChecked(!checked);
 	};

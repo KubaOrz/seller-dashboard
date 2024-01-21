@@ -46,5 +46,6 @@
   "OrderDate": "Order date",
   "DeliveryAddress": "Delivery address",
   "PhoneOfOrderingPerson": "Phone of ordering person",
-  "szt.": "pie."
+  "szt.": "pie.",
+  "SellerQualityHeading": "Improve these aspects to get a better categpry"
 }

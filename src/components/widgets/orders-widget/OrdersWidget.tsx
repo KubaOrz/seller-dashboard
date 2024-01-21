@@ -14,8 +14,8 @@ export const OrdersWidget: FC = () => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="border border-solid border-gray-400 p-4 rounded-xl w-full h-full">
-			<p className={'text-center font-sans text-3xl text-[#10AC98]'}>{t('Orders')}</p>
+		<div className="border border-solid border-gray-400 dark:border-none p-4 rounded-xl w-full h-full dark:bg-secondary-darker">
+			<p className={'text-center font-sans text-3xl text-headerText-light dark:text-headerText-dark'}>{t('Orders')}</p>
 			<div className={'flex gap-1 mt-10 justify-between items-center px-4'}>
 				<OrderTypeCounter
 					image={NotPaidImage}

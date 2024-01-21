@@ -15,7 +15,7 @@ const QualityAssessmentItem: FC<QualityAssessmentItemProps> = ({ name, value, im
                     </div>
 
                     <div className="w-1/2 flex flex-col items-center gap-1 p-4">
-                        <h1 className="text-center font-sans text-2xl text-[#10AC98]">{name}</h1>
+                        <h1 className="text-center font-sans text-2xl text-headerText-light dark:text-headerText-dark">{name}</h1>
                         <Divider sx={{ width: '100%' }}/>
                         <p>{value}</p>
                     </div>

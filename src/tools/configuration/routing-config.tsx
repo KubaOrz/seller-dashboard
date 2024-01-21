@@ -2,7 +2,6 @@ import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
 import { RoutesConstants } from '../../core/constants/RoutesConstants';
 import { LoginPage } from '../../pages/login-page/LoginPage';
 import { SellerDashboardPage } from '../../pages/SellerDashboardPage';
-import { OrdersPage } from '../../pages/OrdersPage';
 import { SalesTipsPage } from '../../pages/SalesTipsPage';
 import SellerQualityPage from '../../pages/seller-quality-page/SellerQualityPage';
 import { FC, ReactNode } from 'react';
@@ -31,7 +30,7 @@ export const AuthenticationContainer: FC<{ children: ReactNode }> = ({ children 
 
 export const AuthenticationPage: FC<{ children: ReactNode }> = ({ children }) => {
 	return (
-		<div className={'h-screen w-full flex flex-col'}>
+		<div className={'h-screen w-full flex flex-col bg-secondary-light dark:bg-secondary-dark'}>
 			<AuthenticationNavbar />
 			<div className={'w-full m-1/4'}>{children}</div>
 		</div>
@@ -76,10 +75,6 @@ export const routes = createBrowserRouter([
 			{
 				path: RoutesConstants.OFFER_RANKING_PAGE,
 				element: <OfferRankingPage />
-			},
-			{
-				path: RoutesConstants.ORDERS_PAGE,
-				element: <OrdersPage />
 			},
 			{
 				path: RoutesConstants.SALES_TIPS_PAGE,

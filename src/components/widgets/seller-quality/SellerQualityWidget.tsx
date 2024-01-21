@@ -36,8 +36,8 @@ const SellerQualityWidget: FC = () => {
 	};
 
 	return (
-		<div className="border border-solid border-gray-400 p-4 rounded-xl w-full">
-			<p className={'text-center font-sans text-3xl text-[#10AC98]'}>{t('SellerQuality')}</p>
+		<div className="border border-solid border-gray-400 p-4 rounded-xl w-full dark:bg-secondary-darker dark:border-none">
+			<p className={'text-center font-sans text-3xl text-headerText-light dark:text-headerText-dark'}>{t('SellerQuality')}</p>
 			<div className={'flex justify-between'}>
 				<div className={'flex flex-col justify-center items-center'}>
 					<div className={'flex justify-center items-center gap-1'}>
@@ -56,7 +56,7 @@ const SellerQualityWidget: FC = () => {
 			</div>
 			<Divider sx={{ mt: 1, mb: 2 }} />
 			<div>
-				<p className={'text-center text-[#10AC98] font-sans'}>{t('SellerQualityHeading')}</p>
+				<p className={'text-center text-headerText-light dark:text-headerText-dark font-sans'}>{t('SellerQualityHeading')}</p>
 				<div className={'flex gap-2 justify-between'}>
 					{worstAspects.map((aspect, index) => (
 						<SingleSellerQuality
