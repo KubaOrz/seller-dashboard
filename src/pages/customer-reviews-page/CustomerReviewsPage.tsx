@@ -78,7 +78,7 @@ const CustomerReviewsPage: FC = () => {
 			<h1 className="text-center font-sans text-4xl text-headerText-light dark:text-headerText-dark mb-5">{t('CustomerReview')}</h1>
 
 			<div className="flex justify-start items-center gap-2 mb-3 w-100 md:w-3/4 lg:w-2/3">
-				<label htmlFor="sortSelect">Sortuj po: </label>
+				<label htmlFor="sortSelect">{t('SortBy')}: </label>
 				<Select value={sortType} onChange={handleSort} size="small">
 					<MenuItem value={'desc'}>
 						<div className={'pr-10'}>{t('Positive')}</div>

@@ -81,7 +81,7 @@ const OfferRankingPage: FC = () => {
 							color="success"
 						/>
 					}
-					label="Najrzadziej kupowane"
+					label={t('TheLeastSold')}
 				/>
 				<FormControlLabel
 					control={
@@ -92,7 +92,7 @@ const OfferRankingPage: FC = () => {
 							color="success"
 						/>
 					}
-					label="Najcześciej kupowane"
+					label={t('BestSold')}
 				/>
 			</div>
 

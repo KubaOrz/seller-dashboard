@@ -47,5 +47,6 @@
   "DeliveryAddress": "Delivery address",
   "PhoneOfOrderingPerson": "Phone of ordering person",
   "szt.": "pie.",
-  "SellerQualityHeading": "Improve these aspects to get a better categpry"
+  "SellerQualityHeading": "Improve these aspects to get a better category",
+  "SortBy" : "Sort By"
 }
