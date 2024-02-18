@@ -15,7 +15,6 @@ To run the applciation all you have to do is to have an installed node on your m
 <img width="1440" alt="Screenshot 2024-02-18 at 16 58 19" src="https://github.com/aidian3k/seller-dashboard/assets/93425971/4f590c9f-9090-4242-a31b-de2e184a8152">
 <img width="1440" alt="Screenshot 2024-02<img width="1440" alt="Screenshot 2024-02-18 at 16 58 37" src="https://github.com/aidian3k/seller-dashboard/assets/93425971/14720e1f-8867-4142-ac1e-d99b5007df0a">
 <img width="1440" alt="Scr<img width="1440" alt="Screenshot 2024-02-18 at 16 58 58" src="https://github.com/aidian3k/seller-dashboard/assets/93425971/00adc657-36e0-4865-8d38-169a45dc472d">
-<img width="1437" alt="Screenshot 2024-02-18 at 16 58 10" src="https://github.com/aidian3k/seller-dashboard/assets/93425971/05179ba5-49b1-4373-a21b-7746a6ee750b">
 <img width="1440" alt="Screenshot 2024-02-18 at 16 58 49" src="https://github.com/aidian3k/seller-dashboard/assets/93425971/473b6828-7ca7-433a-8aeb-82ffa3ae2156">
 
 
