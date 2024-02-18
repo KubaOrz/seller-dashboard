@@ -1,4 +1,4 @@
-<img width="1440" alt="Screenshot 2024-02-18 at 16 58 49" src="https://github.com/aidian3k/seller-dashboard/assets/93425971/3398ab47-11e7-46e6-b7e1-a49c714f179d"># Graphical User Interfaces Design final project
+# Graphical User Interfaces Design final project
 This repository shows our final project of the Graphical User Interface design course at Warsaw University of Technology. This project aimed to create the seller-dashboard app based on some requirements from the client. In this project, we did not write any backend/logic code, but only focused on best practices and principles of creating the best UI/UX design. The main features of the application that had to be included were creating the dark/light theme of the application and providing the user with the possibility of changing the language from Polish to English and backward.
 
 The application uses the following technologies:
